@@ -48,7 +48,7 @@ pipeline {
         }
         stage('Build & Site') {
             when {
-                branch 'production'
+                branch 'master'
             } 
             failFast true
             parallel {
@@ -86,7 +86,7 @@ pipeline {
         }
         stage('deploy') {
             when {
-                branch 'production' 
+                branch 'master' 
             }
             steps {
                 mail to: 'amd@example.com',
