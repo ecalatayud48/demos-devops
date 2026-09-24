@@ -47,9 +47,9 @@ pipeline {
         //    }
         //}
         stage('Build & Site') {
-            when {
-                branch 'master'
-            } 
+            //when {
+            //    branch 'master'
+            //} 
             failFast true
             parallel {
                 stage('Build') {
@@ -85,9 +85,9 @@ pipeline {
             }
         }
         stage('deploy') {
-            when {
-                branch 'master' 
-            }
+            //when {
+            //    branch 'master' 
+            //}
             steps {
                 mail to: 'amd@example.com',
                  subject: "Pendiente de aprobación el despliegue de ${currentBuild.fullDisplayName}",
